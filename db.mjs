@@ -1,30 +1,25 @@
-export class InMemoryDB {
-  constructor() {
-    this.data = new Map();
-  }
+export function createDB() {
+  const data = new Map();
 
-  set(key, value) {
-    this.data.set(key, value);
-    return value;
-  }
-
-  get(key) {
-    return this.data.get(key);
-  }
-
-  delete(key) {
-    return this.data.delete(key);
-  }
-
-  has(key) {
-    return this.data.has(key);
-  }
-
-  clear() {
-    this.data.clear();
-  }
-
-  all() {
-    return Array.from(this.data.entries()).map(([key, value]) => ({ key, value }));
-  }
+  return {
+    set(key, value) {
+      data.set(key, value);
+      return value;
+    },
+    get(key) {
+      return data.get(key);
+    },
+    delete(key) {
+      return data.delete(key);
+    },
+    has(key) {
+      return data.has(key);
+    },
+    clear() {
+      data.clear();
+    },
+    all() {
+      return Array.from(data.entries()).map(([key, value]) => ({ key, value }));
+    }
+  };
 }

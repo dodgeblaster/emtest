@@ -1,6 +1,6 @@
-import { InMemoryDB } from './db.mjs';
+import { createDB } from './db.mjs';
 
-const db = new InMemoryDB();
+const db = createDB();
 
 // Set values
 db.set('user:1', { name: 'Alice', age: 30 });
